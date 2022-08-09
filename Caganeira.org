@@ -280,6 +280,7 @@ Basic configuration for evil
 
 #+end_src
 * Org mode
+** General setup
 #+begin_src emacs-lisp
 (defun efs/org-font-setup ()
   ;; Replace list hyphen with dot
@@ -329,6 +330,10 @@ Basic configuration for evil
 
 #+end_src
 
+** Tweaks
+#+begin_src emacs-lisp
+  (setq org-cycle-include-plain-lists 'integrate)
+#+end_src
 * File managment
 **  Dired
 #+begin_src emacs-lisp

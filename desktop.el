@@ -26,13 +26,14 @@
       ;; Also take a look at display-time-format and format-time-string
 
       ;; Start the Polybar panel
-      (efs/start-panel)
+      ;(efs/start-panel)
 
       ;; Launch apps that will run in the background
       (efs/run-in-background "dunst")
   ;    (efs/run-in-background "nm-applet")
 ;      (efs/run-in-background "pasystray")
- 
+
+      )
 
     (defun efs/exwm-update-class ()
       (exwm-workspace-rename-buffer exwm-class-name))
@@ -102,11 +103,11 @@
       (require 'exwm-randr)
       (exwm-randr-enable)
       (start-process-shell-command "xrandr" nil "xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --mode 1920x1080 -r 165 --pos 0x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-D-0 --off")
-    
+
 
       ;; This will need to be updated to the name of a display!  You can find
       ;; the names of your displays by looking at arandr or the output of xrandr
-      (setq exwm-randr-workspace-monitor-plist '(9 "HDMI-A-0"))
+      (setq exwm-randr-workspace-monitor-plist '(1 "DisplayPort-2" 0 "HDMI-A-0"))
 
       ;; NOTE: Uncomment these lines after setting up autorandr!
       ;; React to display connectivity changes, do initial display update
@@ -158,7 +159,7 @@
 	      ([s-down] . windmove-down)
 
 	      ;; Launch applications via shell command
-	      ([?\s-&] . (lambda (command)
+	      ([?\s-d] . (lambda (command)
 			   (interactive (list (read-shell-command "$ ")))
 			   (start-process-shell-command command nil command)))
 
