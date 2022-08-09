@@ -45,7 +45,8 @@ We use the excellent [[https://github.com/ch11ng/exwm][EXWM]] module as the basi
 	(efs/run-in-background "dunst")
     ;    (efs/run-in-background "nm-applet")
   ;      (efs/run-in-background "pasystray")
- 
+	(efs/run-in-background "polybar")
+
 	)
 
       (defun efs/exwm-update-class ()
@@ -116,7 +117,7 @@ We use the excellent [[https://github.com/ch11ng/exwm][EXWM]] module as the basi
 	(require 'exwm-randr)
 	(exwm-randr-enable)
 	(start-process-shell-command "xrandr" nil "xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --mode 1920x1080 -r 165 --pos 0x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DVI-D-0 --off")
-    
+
 
 	;; This will need to be updated to the name of a display!  You can find
 	;; the names of your displays by looking at arandr or the output of xrandr
@@ -346,7 +347,7 @@ underline-1 = #c792ea
 
 [bar/panel]
 width = 100%
-height = 35
+height = 30
 offset-x = 0
 offset-y = 0
 fixed-center = true

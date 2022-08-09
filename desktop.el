@@ -32,6 +32,7 @@
       (efs/run-in-background "dunst")
   ;    (efs/run-in-background "nm-applet")
 ;      (efs/run-in-background "pasystray")
+      (efs/run-in-background "polybar")
 
       )
 

@@ -129,8 +129,8 @@
 
 (treemacs-load-theme "all-the-icons")
 
-;(use-package vterm
-  ;  :ensure t)
+(use-package vterm
+    :ensure t)
 
 (use-package lsp-mode
   :init
@@ -206,6 +206,11 @@
 
     "g" '(:ignore g :which-key "magit menu")
     "gg" '(magit :which-key "magit buffer")
+
+
+    "o" '(:ignore 0 :which-key "open menu")
+    "ot" '(vterm :which-key "open vterm")
+    "." '(counsel-find-file :which-key "open dired")
     ))
 
 (defun efs/org-font-setup ()
