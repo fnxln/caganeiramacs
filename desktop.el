@@ -140,7 +140,7 @@
 	  ?\M-&
 	  ?\M-:
 	  ?\C-\M-j  ;; Buffer list
-	  ?\C-\ ))  ;; Ctrl+Space
+	  ))  ;; Ctrl+Space
 
       ;; Ctrl+Q will enable the next key to be sent directly
       (define-key exwm-mode-map [?\C-q] 'exwm-input-send-next-key)

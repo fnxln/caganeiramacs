@@ -129,6 +129,19 @@
 
 (treemacs-load-theme "all-the-icons")
 
+;(use-package vterm
+  ;  :ensure t)
+
+(use-package lsp-mode
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  (setq lsp-keymap-prefix "C-c l")
+  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+         (XXX-mode . lsp)
+         ;; if you want which-key integration
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
 ;; icon font
 (use-package all-the-icons
   :if (display-graphic-p))
@@ -174,7 +187,7 @@
   (general-create-definer caganeira/leader-keys
     :keymaps '(normal insert visual emacs)
     :prefix "SPC"
-    :global-prefix "C-SPC")
+    :global-prefix "s-SPC")
 
   (caganeira/leader-keys
     "t"  '(:ignore t :which-key "toggles")
@@ -183,6 +196,16 @@
     "bb" '(counsel-switch-buffer :which-key "switch buffer")
     "bd" '(kill-buffer :which-key "kill buffer")
 
+    "w" '(:ignore w :which-key "window menu")
+    "wc" '(delete-window :which-key "delete current window")
+    "wv" '(split-window-right :which-key "vertical split")
+    "wh" '(split-window-below :which-key "horizontal split")
+
+    "f" '(:ignore f :which-key "file and buffer menu")
+    "fs" '(save-buffer :wich-key "save buffer")
+
+    "g" '(:ignore g :which-key "magit menu")
+    "gg" '(magit :which-key "magit buffer")
     ))
 
 (defun efs/org-font-setup ()
