@@ -132,6 +132,8 @@
 (use-package vterm
     :ensure t)
 
+(electric-pair-mode t)
+
 (use-package lsp-mode
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
@@ -152,6 +154,9 @@
 (use-package company)
 
 (use-package rust-mode
+  :ensure t)
+
+(use-package nix-mode
   :ensure t)
 
 ;; icon font

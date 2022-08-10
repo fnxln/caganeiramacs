@@ -197,6 +197,10 @@ is a package that enhances ivy search
     :ensure t)
 #+end_src
 * IDE
+** tweaks
+#+begin_src emacs-lisp
+  (electric-pair-mode t)
+#+end_src
 ** Lsp Mode
 *** package
 #+begin_src emacs-lisp
@@ -232,6 +236,11 @@ is a package that enhances ivy search
 #+begin_src  emacs-lisp
     (use-package rust-mode
       :ensure t)
+#+end_src
+** Nix
+#+begin_src emacs-lisp
+  (use-package nix-mode
+    :ensure t)
 #+end_src
 * Astetics
 
