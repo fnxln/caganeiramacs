@@ -1,5 +1,6 @@
 #+TITLE: Caganeira eMacs
-* cageneiramacs 
+
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
 [[https://github.com/fnxln/caganeiramacs/blob/master/assets/logo.png]]
 
 ** Introduction
