@@ -204,15 +204,16 @@ is a package that enhances ivy search
 ** Lsp Mode
 *** package
 #+begin_src emacs-lisp
-(use-package lsp-mode
-  :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
-  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-;;         (XXX-mode . lsp)
-         ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
+  (use-package lsp-mode
+    :init
+    ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+    (setq lsp-keymap-prefix "C-c l")
+    :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
+  ;;         (XXX-mode . lsp)
+	   (rust-mode . lsp)
+	   ;; if you want which-key integration
+	   (lsp-mode . lsp-enable-which-key-integration))
+    :commands lsp)
 #+end_src
 *** config
 #+begin_src emacs-lisp
@@ -223,6 +224,7 @@ is a package that enhances ivy search
   (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 #+end_src
 *** debug
+Install dap-mode for debbuging
 #+begin_src emacs-lisp
   (use-package dap-mode)
 #+end_src
@@ -239,8 +241,9 @@ is a package that enhances ivy search
 #+end_src
 ** Nix
 #+begin_src emacs-lisp
-  (use-package nix-mode
-    :ensure t)
+
+   (use-package nix-mode
+      :ensure t)
 #+end_src
 * Astetics
 
@@ -273,7 +276,6 @@ Shows on discord what tha heck im doing
   
 #+end_src
 * Keybinds
-
 ** Evil
 *** Basic
 Basic configuration for evil
@@ -339,12 +341,17 @@ Basic configuration for evil
 
       "o" '(:ignore 0 :which-key "open menu")
       "ot" '(vterm :which-key "open vterm")
+      "op" '(treemacs :which-key "open treemacs")
 
       "." '(counsel-find-file :which-key "open dired")
       ))
 
 
 
+#+end_src
+** Company
+#+begin_src emacs-lisp
+; (bind-key "<tab>" #'company-active-map company-complete-selection) 
 #+end_src
 * Org mode
 ** General setup

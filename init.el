@@ -140,8 +140,9 @@
   (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
 ;;         (XXX-mode . lsp)
-         ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
+	 (rust-mode . lsp)
+	 ;; if you want which-key integration
+	 (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
 (use-package lsp-ui :commands lsp-ui-mode)
@@ -157,7 +158,7 @@
   :ensure t)
 
 (use-package nix-mode
-  :ensure t)
+   :ensure t)
 
 ;; icon font
 (use-package all-the-icons
@@ -227,9 +228,12 @@
 
     "o" '(:ignore 0 :which-key "open menu")
     "ot" '(vterm :which-key "open vterm")
+    "op" '(treemacs :which-key "open treemacs")
 
     "." '(counsel-find-file :which-key "open dired")
     ))
+
+; (bind-key "<tab>" #'company-active-map company-complete-selection)
 
 (defun efs/org-font-setup ()
   ;; Replace list hyphen with dot

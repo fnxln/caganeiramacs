@@ -2,7 +2,7 @@
 * Introduction
 This is my personal configuration o emacs
 ** Meaning
-Caganeira is work of nothen east brasil that means diareia,
+Caganeira form of saying diarreia very common in north easten  brasil,
 i choose this name because it was my stick word when i have nothing to say
 and i just scream *CAGANEIRA*!
 * Installation
