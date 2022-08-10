@@ -298,7 +298,7 @@
   (setq dired-open-extensions '(("png" . "feh")
 				("mkv" . "mpv")
 				("webm" . "mpv")
-				("mp4" . "mpv")))
+				("mp4" . "mpv"))))
 
 (use-package dired-hide-dotfiles
   :hook (dired-mode . dired-hide-dotfiles-mode)
