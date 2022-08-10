@@ -1,5 +1,7 @@
-#+TITLE: caganeiramacs
-* 
+#+TITLE: Caganeira eMacs
+* cageneiramacs 
+[[https://github.com/fnxln/caganeiramacs/blob/master/assets/logo.png]]
+
 ** Introduction
 ** Config
 
