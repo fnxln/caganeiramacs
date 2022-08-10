@@ -1,9 +1,19 @@
-#+TITLE: Caganeira eMacs
+#+TITLE: Caganeira eMacs 💩
+* Introduction
+This is my personal configuration o emacs
+** Meaning
+Caganeira is work of nothen east brasil that means diareia,
+i choose this name because it was my stick word when i have nothing to say
+and i just scream *CAGANEIRA*!
+* Installation
+to install caganeira eMacs just clone the repo to your *~/.emacs.d*
 
-#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
-[[https://github.com/fnxln/caganeiramacs/blob/master/assets/logo.png]]
+#+begin_src bash
+git clone https://github.com/fnxln/caganeiramacs ~/.emacs.d
+#+end_src
 
-** Introduction
-** Config
+
+* EXWM
+
 
 
