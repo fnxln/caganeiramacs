@@ -3,7 +3,7 @@
 # xrdb ~/.emacs.d/exwm/Xresources
 
 # Run the screen compositor
-compton &
+picom &
 
 # Enable screen locking on suspend
 xss-lock -- slock &

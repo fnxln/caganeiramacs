@@ -196,18 +196,42 @@ is a package that enhances ivy search
 (use-package vterm
     :ensure t)
 #+end_src
-* Lsp Mode
-** package
+* IDE
+** Lsp Mode
+*** package
 #+begin_src emacs-lisp
 (use-package lsp-mode
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (XXX-mode . lsp)
+;;         (XXX-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
+#+end_src
+*** config
+#+begin_src emacs-lisp
+
+  (use-package lsp-ui :commands lsp-ui-mode)
+  
+  (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+  (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+#+end_src
+*** debug
+#+begin_src emacs-lisp
+  (use-package dap-mode)
+#+end_src
+** Company Mode
+*** package
+#+begin_src emacs-lisp
+  (use-package company)
+#+end_src
+** Rust
+*** Rust Mode
+#+begin_src  emacs-lisp
+    (use-package rust-mode
+      :ensure t)
 #+end_src
 * Astetics
 
@@ -371,33 +395,35 @@ Basic configuration for evil
 * File managment
 **  Dired
 #+begin_src emacs-lisp
-(use-package dired
-  :ensure nil
-  :commands (dired dired-jump)
-  :bind (("C-x C-j" . dired-jump))
-  :custom ((dired-listing-switches "-agho --group-directories-first"))
-  :config
-  (evil-collection-define-key 'normal 'dired-mode-map
-    "h" 'dired-single-up-directory
-    "l" 'dired-single-buffer))
+    (use-package dired
+      :ensure nil
+      :commands (dired dired-jump)
+      :bind (("C-x C-j" . dired-jump))
+      :custom ((dired-listing-switches "-agho --group-directories-first"))
+      :config
+      (evil-collection-define-key 'normal 'dired-mode-map
+	"h" 'dired-single-up-directory
+	"l" 'dired-single-buffer))
 
-(use-package dired-single
-  :commands (dired dired-jump))
+    (use-package dired-single
+      :commands (dired dired-jump))
 
-(use-package all-the-icons-dired
-  :hook (dired-mode . all-the-icons-dired-mode))
+    (use-package all-the-icons-dired
+      :hook (dired-mode . all-the-icons-dired-mode))
 
-(use-package dired-open
-  :commands (dired dired-jump)
-  :config
-  ;; Doesn't work as expected!
-  ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
-  (setq dired-open-extensions '(("png" . "feh")
-                                ("mkv" . "mpv"))))
+    (use-package dired-open
+      :commands (dired dired-jump)
+      :config
+      ;; Doesn't work as expected!
+      ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
+      (setq dired-open-extensions '(("png" . "feh")
+				    ("mkv" . "mpv")
+				    ("webm" . "mpv")
+				    ("mp4" . "mpv")))
 
-(use-package dired-hide-dotfiles
-  :hook (dired-mode . dired-hide-dotfiles-mode)
-  :config
-  (evil-collection-define-key 'normal 'dired-mode-map
-    "H" 'dired-hide-dotfiles-mode))
+    (use-package dired-hide-dotfiles
+      :hook (dired-mode . dired-hide-dotfiles-mode)
+      :config
+      (evil-collection-define-key 'normal 'dired-mode-map
+	"H" 'dired-hide-dotfiles-mode))
 #+end_src 

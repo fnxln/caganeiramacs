@@ -250,7 +250,7 @@ This launcher script is invoked by =EXWM.desktop= to start Emacs and load our de
   # xrdb ~/.emacs.d/exwm/Xresources
 
   # Run the screen compositor
-  compton &
+  picom &
 
   # Enable screen locking on suspend
   xss-lock -- slock &

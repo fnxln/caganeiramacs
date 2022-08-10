@@ -137,10 +137,22 @@
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (XXX-mode . lsp)
+;;         (XXX-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
+
+(use-package lsp-ui :commands lsp-ui-mode)
+
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+
+(use-package dap-mode)
+
+(use-package company)
+
+(use-package rust-mode
+  :ensure t)
 
 ;; icon font
 (use-package all-the-icons
@@ -210,6 +222,7 @@
 
     "o" '(:ignore 0 :which-key "open menu")
     "ot" '(vterm :which-key "open vterm")
+
     "." '(counsel-find-file :which-key "open dired")
     ))
 
@@ -283,7 +296,9 @@
   ;; Doesn't work as expected!
   ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
   (setq dired-open-extensions '(("png" . "feh")
-                                ("mkv" . "mpv"))))
+				("mkv" . "mpv")
+				("webm" . "mpv")
+				("mp4" . "mpv")))
 
 (use-package dired-hide-dotfiles
   :hook (dired-mode . dired-hide-dotfiles-mode)
